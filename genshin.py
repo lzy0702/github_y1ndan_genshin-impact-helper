@@ -122,6 +122,7 @@ class Sign(Base):
                 self._region_list[i], CONFIG.ACT_ID, self._uid_list[i])
             try:
                 content = req.request('get', info_url, headers=self.get_header()).json()
+                print(content)
                 info_list.append(content)
             except Exception as e:
                 raise Exception(e)
